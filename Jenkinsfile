@@ -1,4 +1,4 @@
-pipeline{
+pipeline {
   agent any
   tools {
     maven 'Maven'
@@ -10,14 +10,14 @@ pipeline{
                  echo "M2_Home = $(M2_HOME)"
            '''
            }
-           }
-           
+    }
            stage ('Build') {
              steps {
             sh 'mvn clean package'
             }
            }
           }
+  }
   }
            
     
